@@ -14,6 +14,23 @@ const NavItem = props => {
 }
 
 class Navigation extends Component{
+
+    constructor(props){
+        super(props);
+        this.counterpart = props.counterpart;
+
+        this.changeSpanish = this.changeSpanish.bind(this);
+        this.changeEnglish = this.changeEnglish.bind(this);
+    }
+
+    changeSpanish(lang){
+        this.counterpart.setLocale('es');
+    }
+
+    changeEnglish(){
+        this.counterpart.setLocale('en');
+    }
+
     render(){
         return(
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -29,9 +46,9 @@ class Navigation extends Component{
                     <NavItem path='/Update' name="Update"/>
                     <NavItem path='/Delete' name="Delete"/>
                 </ul>
-                <ul className="navbar-nav">
-                    <NavItem path='/' name='Language'/>
-                </ul>
+                <button onClick={this.changeEnglish}>English</button>
+                <button onClick={this.changeSpanish}>Spanish</button>
+                
             </div>
             </nav>
         );

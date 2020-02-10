@@ -1,9 +1,6 @@
 import React, {Component} from 'react';
 import firebase from '../Firebase';
 import Translate from 'react-translate-component';
-import en from '../lang/en';
-import es from '../lang/es';
-
 
 
 class Create extends Component{
@@ -17,21 +14,16 @@ class Create extends Component{
             email: '',
             phone: '',
             age: '',
-            answer: '',
-            locale: 'en'
+            answer: ''
         };
 
-        this.counterpart = props.counterpart; 
-        this.counterpart.registerTranslations('en',en);
-        this.counterpart.registerTranslations('es',es);
-        this.counterpart.setLocale(this.state.locale);
+        
 
     }
 
     onChange = (e) => {
         const state = this.state;
         state[e.target.name] = e.target.value;
-        state[e.target.locale] = this.counterpart.getLocale();
         this.setState(state);
 
     }
@@ -89,7 +81,7 @@ class Create extends Component{
         return(
             <div class="container">
 
-                <Translate content="title" component="h3"/>
+                <Translate content="titleCreate" component="h3"/>
 
                 <div className="container mt-5 w-50">
                     <form onSubmit={this.onSubmit}>
@@ -97,33 +89,35 @@ class Create extends Component{
                         <label for="name">
                             <Translate content="nameText"/>
                         </label>
-                        <input type="text" className="form-control" name="name"  value={name} onChange={this.onChange} placeholder={this.counterpart.translate("placeholderName",{})}/>
+                        <input type="text" id="inputName" className="form-control" name="name"  value={name} onChange={this.onChange} placeholder='Enter your name'/>
                     </div>
                     <div className="form-group">
                         <label for="email">
                             <Translate content="emailText"/>
                         </label>
-                        <input type="text" className="form-control" name="email"  value={email} onChange={this.onChange}  placeholder={this.counterpart.translate("placeholderEmail",{})}/>
+                        <input type="text" id="inputEmail" className="form-control" name="email"  value={email} onChange={this.onChange}  placeholder='Enter your email'/>
                     </div>
                     <div className="form-group">
                         <label for="phone">
                             <Translate content="phoneText"/>
                         </label>
-                        <input type="text" className="form-control" name="phone"  value={phone} onChange={this.onChange}  placeholder={this.counterpart.translate("placeholderPhone",{})}/>
+                        <input type="text" id="inputPhone" className="form-control" name="phone"  value={phone} onChange={this.onChange}  placeholder='Enter your phone number'/>
                     </div>
                     <div className="form-group">
                         <label for="age">
                             <Translate content="ageText"/>
                         </label>
-                        <input type="text" className="form-control" name="age"  value={age} onChange={this.onChange}  placeholder={this.counterpart.translate("placeholderAge",{})}/>
+                        <input type="text" id="inputAge" className="form-control" name="age"  value={age} onChange={this.onChange}  placeholder='Enter your age'/>
                     </div>
                     <div className="form-group">
                         <label for="answer">
                             <Translate content="questionText"/>
                         </label>
-                        <textarea class="form-control" name="answer" rows="3" onChange={this.onChange}  placeholder={this.counterpart.translate("placeholderQuestion",{})}></textarea>
+                        <textarea class="form-control" id="inputQuestion"  name="answer" rows="3" onChange={this.onChange}  placeholder='Enter your answer'></textarea>
                     </div>
-                    <button type="submit" className="btn btn-primary">Submit</button>
+                    <button type="submit" className="btn btn-primary">
+                        <Translate content="buttonSubmit"/>
+                    </button>
                     </form>
                 </div>
             </div>

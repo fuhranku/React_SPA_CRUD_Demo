@@ -1,5 +1,10 @@
 export default {
-    title: 'Survey participants - CREATE',
+    titleCreate: 'Survey participants - CREATE',
+    titleRead: 'Survey participants - READ',
+    titleDelete: 'Survey participants - DELETE',
+    titleUpdate: 'Survey participants - UPDATE',
+
+
     nameText: 'Full name',
     emailText: 'Email',
     phoneText: 'Phone number',
@@ -11,6 +16,8 @@ export default {
     placeholderEmail: 'Enter your email',
     placeholderPhone: 'Enter your phone number',
     placeholderAge: 'Enter your age',
-    placeholderQuestion: 'Enter your answer'
+    placeholderQuestion: 'Enter your answer',
+
+    buttonSubmit: 'Submit'
 
 }

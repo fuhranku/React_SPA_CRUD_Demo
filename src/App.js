@@ -6,6 +6,7 @@ import Create from './pages/Create';
 import Read from './pages/Read';
 import Update from './pages/Update';
 import Delete from './pages/Delete';
+import UpdateItem from './pages/UpdateItem';
 
 import counterpart from 'counterpart';
 
@@ -17,7 +18,8 @@ function App() {
         <Route exact path="/" render={() => (<Redirect to="/Create" />)} />
   <Route path="/Create" component={() => <Create counterpart={counterpart} />} />
         <Route path="/Read" component={Read}/>
-        <Route path="/Update" component={Update}/>
+        <Route exact path="/Update" component={Update}/>
+        <Route  path="/Update/:id" component={UpdateItem}/>
         <Route path="/Delete" component={Delete}/>
       </Router>
     </div>

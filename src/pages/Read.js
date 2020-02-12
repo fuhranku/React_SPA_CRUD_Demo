@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import firebase from '../Firebase';
+import Translate from 'react-translate-component';
 
 class Read extends Component{
     constructor(props){
@@ -40,19 +41,17 @@ class Read extends Component{
             <div class="container">
             <div class="panel panel-default">
               <div class="panel-heading">
-                <h3 class="panel-title">
-                  Survey participants - READ
-                </h3>
+                <Translate content="titleRead" component="h3"/>
               </div>
               <div class="panel-body">
                 <table class="table table-stripe">
                   <thead>
                     <tr>
-                      <th>Name</th>
-                      <th>Email</th>
-                      <th>Phone</th>
-                      <th>Age</th>
-                      <th>Answer</th>
+                      <th><Translate content="nameText"/></th>
+                      <th><Translate content="emailText"/></th>
+                      <th><Translate content="phoneText"/></th>
+                      <th><Translate content="ageText"/></th>
+                      <th><Translate content="questionText"/></th>
                     </tr>
                   </thead>
                   <tbody>

@@ -1,5 +1,9 @@
 export default {
-    title: 'Encuenta para participantes - CREAR',
+    titleCreate: 'Encuenta para participantes - CREAR',
+    titleRead: 'Encuenta para participantes - LEER',
+    titleDelete: 'Encuenta para participantes - ELIMINAR',
+    titleUpdate: 'Encuenta para participantes - ACTUALIZAR',
+
     nameText: 'Nombre completo',
     emailText: 'Correo electrónico',
     phoneText: 'Número de teléfono',
@@ -11,6 +15,8 @@ export default {
     placeholderEmail: 'Ingresa tu correo electrónico',
     placeholderPhone: 'Ingresa un número de teléfono',
     placeholderAge: 'Ingresa tu edad',
-    placeholderQuestion: 'Ingresa tu respuesta'
+    placeholderQuestion: 'Ingresa tu respuesta',
+
+    buttonSubmit: 'Enviar'
 
 }

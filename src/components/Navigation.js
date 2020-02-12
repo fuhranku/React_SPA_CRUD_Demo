@@ -29,9 +29,6 @@ class Navigation extends Component{
                     <NavItem path='/Update' name="Update"/>
                     <NavItem path='/Delete' name="Delete"/>
                 </ul>
-                <ul className="navbar-nav">
-                    <NavItem path='/' name='Language'/>
-                </ul>
             </div>
             </nav>
         );

@@ -4,37 +4,61 @@ import firebase from '../Firebase';
 
 class Update extends Component{
 
-    constructor(props){
-        super(props);
-        this.ref = firebase.firestore().collection('survey');
-        this.unsubscribe = null;
-        this.state = {
-            surveys: []
-        };
-    }
+  constructor(props){
+    super(props);
+    this.ref = firebase.firestore().collection('survey');
+    this.unsubscribe = null;
+    this.state = {
+        surveys: []
+    };
+  } 
+    
 
     onCollectionUpdate = (querySnapshot) => {
-        const surveys = [];
-        querySnapshot.forEach((doc) => {
-            const {name, email, phone, age, answer} = doc.data();
-            surveys.push({
-                key: doc.id,
-                doc,
-                name,
-                email,
-                phone,
-                age,
-                answer
-            });
-        });
-        this.setState({
-            surveys
-        });
-    }
+      const surveys = [];
+      querySnapshot.forEach((doc) => {
+          const {name, email, phone, age, answer} = doc.data();
+          surveys.push({
+              key: doc.id,
+              doc,
+              name,
+              email,
+              phone,
+              age,
+              answer
+          });
+      });
+      this.setState({
+          surveys
+      });
+    } 
 
     componentDidMount(){
-        this.unsubscribe = this.ref.onSnapshot(this.onCollectionUpdate);
+      this.unsubscribe = this.ref.onSnapshot(this.onCollectionUpdate);
     }
+
+
+
+
+    // componentDidMount(){
+    //         const ref= firebase.firestore().collection('survey').doc(this.props.match.params.id);
+    //   ref.get().then((doc) => {
+    //     if (doc.exists) {
+    //       const survey = doc.data();
+    //       this.setState({
+    //         key:doc.id,
+    //         name: survey.name,
+    //         email: survey.email,
+    //         phone: survey.phone,
+    //         age: survey.age,
+    //         answer: survey.answer
+    //       });
+    //     }else{
+    //       console.log("ERROR::No such document");
+    //     }
+    //   });
+    //     this.unsubscribe = this.ref.onSnapshot(this.onCollectionUpdate);
+    // }
 
     render(){
         return(
@@ -66,7 +90,7 @@ class Update extends Component{
                         <td>{survey.age}</td>
                         <td>{survey.answer}</td>
                         <td>
-                            <Link className="btn btn-success">Update</Link>
+                            <Link to={`/Update/${survey.key}`}className="btn btn-success">Update</Link>
                         </td>
                       </tr>
                     )}

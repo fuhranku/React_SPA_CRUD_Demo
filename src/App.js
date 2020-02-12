@@ -8,11 +8,12 @@ import Update from './pages/Update';
 import Delete from './pages/Delete';
 import UpdateItem from './pages/UpdateItem';
 
+import counterpart from 'counterpart';
 
 function App() {
   return (
     <div>
-      <Navigation/>
+      <Navigation  counterpart={counterpart} />
       <Router>
         <Route exact path="/" render={() => (<Redirect to="/Create" />)} />
         <Route path="/Create" component={Create}/>

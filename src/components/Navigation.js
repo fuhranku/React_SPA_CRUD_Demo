@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import en from '../lang/en';
+import es from '../lang/es';
 
 const NavItem = props => {
     const pageURI = window.location.pathname+window.location.search;
@@ -14,6 +16,48 @@ const NavItem = props => {
 }
 
 class Navigation extends Component{
+
+    constructor(props){
+        super(props);
+        this.counterpart = props.counterpart;
+
+        this.counterpart.registerTranslations('en',en);
+        this.counterpart.registerTranslations('es',es);
+
+        this.counterpart.setLocale('en');
+
+
+        this.changeSpanish = this.changeSpanish.bind(this);
+        this.changeEnglish = this.changeEnglish.bind(this);
+    }
+
+    changeSpanish(lang){
+        this.counterpart.setLocale('es');
+
+        //change placeholders
+        if(!document.getElementById('inputName')) return;
+
+        document.getElementById('inputName').placeholder = this.counterpart.translate("placeholderName",{});
+        document.getElementById('inputEmail').placeholder = this.counterpart.translate("placeholderEmail",{});
+        document.getElementById('inputPhone').placeholder = this.counterpart.translate("placeholderPhone",{});
+        document.getElementById('inputAge').placeholder = this.counterpart.translate("placeholderAge",{});
+        document.getElementById('inputQuestion').placeholder = this.counterpart.translate("placeholderQuestion",{});
+
+    }
+
+    changeEnglish(){
+        this.counterpart.setLocale('en');
+
+        //change placeholders
+        if(!document.getElementById('inputName')) return;
+
+        document.getElementById('inputName').placeholder = this.counterpart.translate("placeholderName",{});
+        document.getElementById('inputEmail').placeholder = this.counterpart.translate("placeholderEmail",{});
+        document.getElementById('inputPhone').placeholder = this.counterpart.translate("placeholderPhone",{});
+        document.getElementById('inputAge').placeholder = this.counterpart.translate("placeholderAge",{});
+        document.getElementById('inputQuestion').placeholder = this.counterpart.translate("placeholderQuestion",{});
+    }
+
     render(){
         return(
             <nav className="navbar navbar-expand-lg navbar-light bg-light">

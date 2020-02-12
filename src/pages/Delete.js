@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import firebase from '../Firebase';
+import Translate from 'react-translate-component';
 
 class Delete extends Component{
 
@@ -59,11 +60,11 @@ class Delete extends Component{
                 <table class="table table-stripe">
                   <thead>
                     <tr>
-                      <th>Name</th>
-                      <th>Email</th>
-                      <th>Phone</th>
-                      <th>Age</th>
-                      <th>Answer</th>
+                      <th><Translate content="nameText"/></th>
+                      <th><Translate content="emailText"/></th>
+                      <th><Translate content="phoneText"/></th>
+                      <th><Translate content="ageText"/></th>
+                      <th><Translate content="questionText"/></th>
                       <th></th>
                     </tr>
                   </thead>

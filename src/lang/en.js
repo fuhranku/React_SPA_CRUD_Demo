@@ -3,6 +3,7 @@ export default {
     titleRead: 'Survey participants - READ',
     titleDelete: 'Survey participants - DELETE',
     titleUpdate: 'Survey participants - UPDATE',
+    titleUpdateFrom: 'Survey participants - Update data from ',
 
 
     nameText: 'Full name',
@@ -18,6 +19,7 @@ export default {
     placeholderAge: 'Enter your age',
     placeholderQuestion: 'Enter your answer',
 
-    buttonSubmit: 'Submit'
+    buttonSubmit: 'Submit',
+    buttonUpdate: 'Update'
 
 }

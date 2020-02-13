@@ -3,6 +3,7 @@ export default {
     titleRead: 'Encuenta para participantes - LEER',
     titleDelete: 'Encuenta para participantes - ELIMINAR',
     titleUpdate: 'Encuenta para participantes - ACTUALIZAR',
+    titleUpdateFrom: 'Encuenta para participantes - Actualizar datos de ',
 
     nameText: 'Nombre completo',
     emailText: 'Correo electrónico',
@@ -17,6 +18,7 @@ export default {
     placeholderAge: 'Ingresa tu edad',
     placeholderQuestion: 'Ingresa tu respuesta',
 
-    buttonSubmit: 'Enviar'
+    buttonSubmit: 'Enviar',
+    buttonUpdate: 'Actualizar'
 
 }

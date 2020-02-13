@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import firebase from '../Firebase';
 import Translate from 'react-translate-component';
 
+
+
 class Delete extends Component{
 
     constructor(props){

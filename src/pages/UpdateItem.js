@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import firebase from '../Firebase';
+import Translate from 'react-translate-component';
 
 class UpdateItem extends Component {
     constructor(props){
@@ -67,32 +68,35 @@ class UpdateItem extends Component {
         const {name, email, phone, age, answer} = this.state;
         return(
             <div class="container">
-                <h3 class="panel-title">
-                    Survey participants - Update data from {name}
-                </h3>
+                
+                <Translate content="titleUpdateFrom" component="h3"/> 
+                <h3 class="panel-title" id="panelTitleUpdate"> {name}</h3>
+
                 <div className="container mt-5 w-50">
                     <form onSubmit={this.onSubmit}>
                     <div className="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" className="form-control" name="name"  value={name} onChange={this.onChange} placeholder="Enter your name"/>
+                        <Translate content="nameText"/>
+                        <input type="text" className="form-control" id="inputName" name="name"  value={name} onChange={this.onChange} placeholder="Enter your name"/>
                     </div>
                     <div className="form-group">
-                        <label for="email">Email</label>
-                        <input type="text" className="form-control" name="email"  value={email} onChange={this.onChange}  placeholder="Enter your email"/>
+                         <Translate content="emailText"/>
+                        <input type="text" className="form-control" id="inputEmail" name="email"  value={email} onChange={this.onChange}  placeholder="Enter your email"/>
                     </div>
                     <div className="form-group">
-                        <label for="phone">Phone number</label>
-                        <input type="text" className="form-control" name="phone"  value={phone} onChange={this.onChange}  placeholder="Enter your phone number"/>
+                        <Translate content="phoneText"/>
+                        <input type="text" className="form-control" id="inputPhone" name="phone"  value={phone} onChange={this.onChange}  placeholder="Enter your phone number"/>
                     </div>
                     <div className="form-group">
-                        <label for="age">Age</label>
-                        <input type="text" className="form-control" name="age"  value={age} onChange={this.onChange}  placeholder="Enter your age"/>
+                        <Translate content="ageText"/>
+                        <input type="text" className="form-control" id="inputAge" name="age"  value={age} onChange={this.onChange}  placeholder="Enter your age"/>
                     </div>
                     <div className="form-group">
-                        <label for="answer">What's your opinion about space traveling?</label>
-                        <textarea class="form-control" name="answer" rows="3" onChange={this.onChange} value={answer} placeholder="Enter your answer ">{answer}</textarea>
+                        <Translate content="questionText"/>
+                        <textarea class="form-control" name="answer" id="inputQuestion" rows="3" onChange={this.onChange} value={answer} placeholder="Enter your answer ">{answer}</textarea>
                     </div>
-                    <button type="submit" className="btn btn-warning">Modify</button>
+                    <button type="submit" className="btn btn-warning">
+                        <Translate content="buttonUpdate"/>
+                    </button>
                     </form>
                 </div>
             </div>

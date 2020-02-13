@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import en from '../lang/en';
 import es from '../lang/es';
+import { getLocale } from 'react-translate-component';
 
 const NavItem = props => {
     const pageURI = window.location.pathname+window.location.search;
@@ -73,8 +74,8 @@ class Navigation extends Component{
                     <NavItem path='/Update' name="Update"/>
                     <NavItem path='/Delete' name="Delete"/>
                 </ul>
-                <button onClick={this.changeEnglish}>English</button>
-                <button onClick={this.changeSpanish}>Spanish</button>
+                <button class="btn btn-light" onClick={this.changeEnglish}>English</button>
+                <button class="btn btn-light" onClick={this.changeSpanish}>Spanish</button>
             </div>
             </nav>
         );

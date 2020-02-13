@@ -11,7 +11,6 @@ export default {
     ageText: 'Age',
     questionText: "What's your opinion about space traveling?",
 
-
     placeholderName: 'Enter your name',
     placeholderEmail: 'Enter your email',
     placeholderPhone: 'Enter your phone number',

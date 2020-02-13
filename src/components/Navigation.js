@@ -73,6 +73,8 @@ class Navigation extends Component{
                     <NavItem path='/Update' name="Update"/>
                     <NavItem path='/Delete' name="Delete"/>
                 </ul>
+                <button onClick={this.changeEnglish}>English</button>
+                <button onClick={this.changeSpanish}>Spanish</button>
             </div>
             </nav>
         );

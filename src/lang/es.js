@@ -3,7 +3,7 @@ export default {
     titleRead: 'Encuenta para participantes - LEER',
     titleDelete: 'Encuenta para participantes - ELIMINAR',
     titleUpdate: 'Encuenta para participantes - ACTUALIZAR',
-    titleUpdateFrom: 'Encuenta para participantes - Actualizar datos de ',
+    titleUpdateFrom: 'Encuenta para participantes - Actualizar datos de %(_name)s',
 
     nameText: 'Nombre completo',
     emailText: 'Correo electrónico',

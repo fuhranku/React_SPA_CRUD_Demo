@@ -3,7 +3,7 @@ export default {
     titleRead: 'Survey participants - READ',
     titleDelete: 'Survey participants - DELETE',
     titleUpdate: 'Survey participants - UPDATE',
-    titleUpdateFrom: 'Survey participants - Update data from ',
+    titleUpdateFrom: 'Survey participants - Update data from %(_name)s',
 
 
     nameText: 'Full name',
@@ -11,7 +11,6 @@ export default {
     phoneText: 'Phone number',
     ageText: 'Age',
     questionText: "What's your opinion about space traveling?",
-
 
     placeholderName: 'Enter your name',
     placeholderEmail: 'Enter your email',
@@ -21,5 +20,13 @@ export default {
 
     buttonSubmit: 'Submit',
     buttonUpdate: 'Update'
+
+    /*
+    //errors
+    nameRequired: 'Name is required.',
+    onlyText: 'Only text is allowed.',
+    emailRequired: 'Email is required.',
+    'Invalid email.'
+    */
 
 }

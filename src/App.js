@@ -19,7 +19,7 @@ function App() {
         <Route path="/Create" component={Create}/>
         <Route path="/Read" component={Read}/>
         <Route exact path="/Update" component={Update}/>
-        <Route  path="/Update/:id" component={UpdateItem}/>
+        <Route  path="/Update/:id" component={(props) => <UpdateItem {...props} counterpart={counterpart} />}/>
         <Route path="/Delete" component={Delete}/>
       </Router>
     </div>

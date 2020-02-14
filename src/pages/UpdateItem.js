@@ -12,51 +12,51 @@ class UpdateItem extends Component {
                 method: 'isEmpty',
                 validWhen: false,
                 message: 'Name is required.',
-                messageES: 'Nombre requerido'
+                messageES: 'Nombre requerido.'
             },
             {
                 field: 'name',
                 method: 'matches',
-                args:[/^[a-zA-Z0-9_ ]*$/],
+                args:[/^[a-zA-Z]*$/],
                 validWhen: true,
                 message: 'Only text is allowed.',
-                messageES: 'Solo texto es permitido'
+                messageES: 'Solo texto es permitido.'
             },
             {
                 field: 'email',
                 method: 'isEmpty',
                 validWhen: false,
                 message: 'Email is required.',
-                messageES: 'Email requerido'
+                messageES: 'Email requerido.'
             },
             {
                 field: 'email',
                 method: 'isEmail',
                 validWhen: true,
                 message: 'Invalid email.',
-                messageES: 'Email invalido'
+                messageES: 'Email inválido.'
             },
             {
                 field: 'phone',
                 method: 'isEmpty',
                 validWhen: false,
                 message: 'Phone is required.',
-                messageES: 'Teléfono es requerido'
+                messageES: 'Teléfono requerido.'
             },
             {
                 field: 'phone',
                 method: 'matches',
                 args:[/^[0][2,4][1-9][1-9]-\d{3}\d{4}$/],
                 validWhen: true,
-                message: 'Invalid number. It must be like this ( 0212-0000000 )',
-                messageES: 'Número inválido. Debe ser así ( 0212-0000000 )'
+                message: 'Invalid number. It must be like this ( 0212-0000000 ).',
+                messageES: 'Número inválido. Debe ser así ( 0212-0000000 ).'
             },
             {
                 field: 'age',
                 method: 'isEmpty',
                 validWhen: false,
                 message: 'Age is required.',
-                messageES: 'Edad requerida'
+                messageES: 'Edad requerida.'
             },
             {
                 field: 'age',
@@ -64,14 +64,14 @@ class UpdateItem extends Component {
                 args: [{min:1, max:100}],
                 validWhen: true,
                 message: 'Age must be a integer between 1 and 100',
-                messageES: 'Edad debe ser un entero entre 1 y 100'
+                messageES: 'Edad debe ser un entero entre 1 y 100.'
             },
             {
                 field: 'answer',
                 method: 'isEmpty',
                 validWhen: false,
                 message: 'You must answer something.',
-                messageES: 'Debes responder algo requerido'
+                messageES: 'Este campo no puede estar vacío.'
             },
             
         ]);
@@ -163,7 +163,7 @@ class UpdateItem extends Component {
                     <div className="form-group">
                         <Translate content="nameText"/>
                         <input type="text" className="form-control" id="inputName" name="name"  value={name} onChange={this.onChange} placeholder="Enter your name"/>
-                        <div id="errorName" className={validation.name.isInvalid ? 'alert alert-danger' : 'd-none'}>{this.counterpart.getLocale() == 'es' ? validation.name.messageES : validation.name.message}</div>
+                        <div id="errorName"  className={validation.name.isInvalid ? 'alert alert-danger' : 'd-none'}>{this.counterpart.getLocale() == 'es' ? validation.name.messageES : validation.name.message}</div>
                     </div>
                     <div className="form-group">
                         <Translate content="emailText"/>

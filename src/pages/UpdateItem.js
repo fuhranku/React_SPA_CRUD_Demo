@@ -178,7 +178,7 @@ class UpdateItem extends Component {
                     <div className="form-group">
                         <Translate content="ageText"/>
                         <input type="text" className="form-control" id="inputAge" name="age"  value={age} onChange={this.onChange}  placeholder="Enter your age"/>
-                        <div id="errorAge" className={validation.age.isInvalid ? 'alert alert-danger' : 'd-none'}>{validation.age.messageES}</div>
+                        <div id="errorAge" className={validation.age.isInvalid ? 'alert alert-danger' : 'd-none'}>{this.counterpart.getLocale() == 'es' ? validation.age.messageES : validation.age.message}</div>
                     </div>
                     <div className="form-group">
                         <Translate content="questionText"/>

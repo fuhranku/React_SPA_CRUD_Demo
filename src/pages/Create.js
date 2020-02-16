@@ -16,58 +16,67 @@ class Create extends Component{
                 field: 'name',
                 method: 'isEmpty',
                 validWhen: false,
-                message: 'Name is required.'
+                message: 'Name is required.',
+                messageES: 'Nombre requerido.'
             },
             {
                 field: 'name',
                 method: 'matches',
-                args:[/^[a-zA-Z0-9_ ]*$/],
+                args:[/^[a-zA-Z]*$/],
                 validWhen: true,
-                message: 'Only text is allowed.'
+                message: 'Only text is allowed.',
+                messageES: 'Solo texto es permitido.'
             },
             {
                 field: 'email',
                 method: 'isEmpty',
                 validWhen: false,
-                message: 'Email is required.'
+                message: 'Email is required.',
+                messageES: 'Email requerido.'
             },
             {
                 field: 'email',
                 method: 'isEmail',
                 validWhen: true,
-                message: 'Invalid email.'
+                message: 'Invalid email.',
+                messageES: 'Email inválido.'
             },
             {
                 field: 'phone',
                 method: 'isEmpty',
                 validWhen: false,
-                message: 'Phone is required.'
+                message: 'Phone is required.',
+                messageES: 'Teléfono requerido.'
             },
             {
                 field: 'phone',
                 method: 'matches',
                 args:[/^[0][2,4][1-9][1-9]-\d{3}\d{4}$/],
                 validWhen: true,
-                message: 'Invalid number. It must be like this ( 0212-0000000 )'
+                message: 'Invalid number. It must be like this ( 0212-0000000 ).',
+                messageES: 'Número inválido. Debe ser así ( 0212-0000000 ).'
             },
             {
                 field: 'age',
                 method: 'isEmpty',
                 validWhen: false,
-                message: 'Age is required.'
+                message: 'Age is required.',
+                messageES: 'Edad requerida.'
             },
             {
                 field: 'age',
                 method: 'isInt',
                 args: [{min:1, max:100}],
                 validWhen: true,
-                message: 'Age must be a integer between 1 and 100'
+                message: 'Age must be a integer between 1 and 100',
+                messageES: 'Edad debe ser un entero entre 1 y 100.'
             },
             {
                 field: 'answer',
                 method: 'isEmpty',
                 validWhen: false,
-                message: 'You must answer something.'
+                message: 'You must answer something.',
+                messageES: 'Este campo no puede estar vacío.'
             },
             
         ]);
@@ -81,6 +90,7 @@ class Create extends Component{
             validation: this.validator.valid()
         };
 
+        this.counterpart = props.counterpart;
         this.submitted = false;
 
     }
@@ -165,35 +175,35 @@ class Create extends Component{
                                 <Translate content="nameText"/>
                             </label>
                             <input type="text" id="inputName" className="form-control" name="name"  value={name} onChange={this.onChange} placeholder='Enter your name'/>
-                            <div className={validation.name.isInvalid ? 'alert alert-danger' : 'd-none'}>{validation.name.message}</div>
+                            <div className={validation.name.isInvalid ? 'alert alert-danger' : 'd-none'}>{this.counterpart.getLocale() == 'es' ? validation.name.messageES : validation.name.message}</div>
                     </div>
                     <div className="form-group">
                             <label for="email">
                                 <Translate content="emailText"/>
                             </label>
                             <input type="text" id="inputEmail" className="form-control" name="email"  value={email} onChange={this.onChange}  placeholder='Enter your email'/>
-                            <div className={validation.email.isInvalid ? 'alert alert-danger' : 'd-none'}>{validation.email.message}</div>
+                            <div className={validation.email.isInvalid ? 'alert alert-danger' : 'd-none'}>{this.counterpart.getLocale() == 'es' ? validation.email.messageES : validation.email.message}</div>
                     </div>
                     <div className="form-group">
                         <label for="phone">
                             <Translate content="phoneText"/>
                         </label>
                         <input type="text" id="inputPhone" className="form-control" name="phone"  value={phone} onChange={this.onChange}  placeholder='Enter your phone number'/>
-                        <div className={validation.phone.isInvalid ? 'alert alert-danger' : 'd-none'}>{validation.phone.message}</div>
+                        <div className={validation.phone.isInvalid ? 'alert alert-danger' : 'd-none'}>{this.counterpart.getLocale() == 'es' ? validation.phone.messageES : validation.phone.message}</div>
                     </div>
                     <div className="form-group">
                         <label for="age">
                             <Translate content="ageText"/>
                         </label>
                         <input type="text" id="inputAge" className="form-control" name="age"  value={age} onChange={this.onChange}  placeholder='Enter your age'/>
-                        <div className={validation.age.isInvalid ? 'alert alert-danger' : 'd-none'}>{validation.age.message}</div>
+                        <div className={validation.age.isInvalid ? 'alert alert-danger' : 'd-none'}>{this.counterpart.getLocale() == 'es' ? validation.age.messageES : validation.age.message}</div>
                     </div>
                     <div className="form-group">
                         <label for="answer">
                             <Translate content="questionText"/>
                         </label>
                         <textarea class="form-control" id="inputQuestion"  name="answer" rows="3" onChange={this.onChange}  placeholder='Enter your answer'></textarea>
-                        <div className={validation.answer.isInvalid ? 'alert alert-danger' : 'd-none'}>{validation.answer.message}</div>
+                        <div className={validation.answer.isInvalid ? 'alert alert-danger' : 'd-none'}>{this.counterpart.getLocale() == 'es' ? validation.answer.messageES : validation.answer.message}</div>
                     </div>
                     <button type="submit" className="btn btn-primary">
                         <Translate content="buttonSubmit"/>

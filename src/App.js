@@ -16,7 +16,7 @@ function App() {
       <Navigation  counterpart={counterpart} />
       <Router>
         <Route exact path="/" render={() => (<Redirect to="/Create" />)} />
-        <Route path="/Create" component={Create}/>
+        <Route path="/Create" component={(props) => <Create {...props} counterpart={counterpart} />}/>
         <Route path="/Read" component={Read}/>
         <Route exact path="/Update" component={Update}/>
         <Route  path="/Update/:id" component={(props) => <UpdateItem {...props} counterpart={counterpart} />}/>
